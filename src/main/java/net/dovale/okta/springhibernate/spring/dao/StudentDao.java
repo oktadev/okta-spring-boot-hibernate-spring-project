@@ -1,7 +1,14 @@
 package net.dovale.okta.springhibernate.spring.dao;
 
 import net.dovale.okta.springhibernate.spring.entities.Student;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StudentDao extends CrudRepository<Student, Long> {
+import java.util.List;
+
+public interface StudentDao extends JpaRepository<Student, Long> {
+
+    List<Student> findByNameContaining(String name);
+
+    List<Student> findByAgeBetween(short smallerAge, short biggerAge);
+
 }

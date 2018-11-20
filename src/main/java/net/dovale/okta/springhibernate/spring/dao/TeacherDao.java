@@ -1,6 +1,11 @@
 package net.dovale.okta.springhibernate.spring.dao;
 
 import net.dovale.okta.springhibernate.spring.entities.Teacher;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TeacherDao extends CrudRepository<Teacher, Long> {}
+import java.util.List;
+
+public interface TeacherDao extends JpaRepository<Teacher, Long> {
+
+    List<Teacher> findByNameContaining(String name);
+}
