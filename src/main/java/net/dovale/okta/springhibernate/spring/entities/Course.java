@@ -11,7 +11,7 @@ public class Course {
     private Long id;
     private String name;
     private int workload;
-    private short rate;
+    private int rate;
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "fk_course_teacher"))
     private Teacher teacher;
@@ -19,7 +19,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(String name, int workload, short rate, Teacher teacher) {
+    public Course(String name, int workload, int rate, Teacher teacher) {
         this.name = name;
         this.workload = workload;
         this.rate = rate;
@@ -42,11 +42,11 @@ public class Course {
         this.workload = workload;
     }
 
-    public short getRate() {
+    public int getRate() {
         return rate;
     }
 
-    public void setRate(short rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 
