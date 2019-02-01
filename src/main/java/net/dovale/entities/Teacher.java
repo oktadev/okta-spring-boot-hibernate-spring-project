@@ -1,4 +1,4 @@
-package net.dovale.okta.springhibernate.spring.entities;
+package net.dovale.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
